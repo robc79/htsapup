@@ -37,6 +37,32 @@ class CountSequenceTest(unittest.TestCase):
 
 
 
+class ParseSequenceArgumentTest(unittest.TestCase):
+    def setUp(self):
+        # Called before running any test methods.
+        pass
+
+
+    def tearDown(self):
+        # Called after running all test methods.
+        pass
+
+
+
+
+class ShowTotalsTest(unittest.TestCase):
+    def setUp(self):
+        # Called before running any test methods.
+        pass
+
+
+    def tearDown(self):
+        # Called after running all test methods.
+        pass
+
+
+
+
 if __name__ == "__main__":
     # Run all tests when the module is invoked as a script.
     unittest.main()

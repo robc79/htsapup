@@ -9,6 +9,13 @@
 import sys
 
 
+def parse_sequence_argument(args):
+    if len(args) < 2:
+        raise ValueError("Argument missing")
+
+    return args[1]
+
+
 def count(sequence):
     totals = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
 
@@ -19,10 +26,13 @@ def count(sequence):
     return totals
 
 
+def show_totals(totals, out):
+    for nucleotide, count in totals.items():
+        print("{0} total is {1}".format(nucleotide, count), file=out)
+
+
 # Entry point for invocation as a script, expects one command line argument
 if __name__ == "__main__":
-    sequence = sys.argv[1]
+    sequence = parse_sequence_argument(sys.argv)
     totals = count(sequence)
-
-    for nucleotide, count in totals.items():
-        print("{0} total is {1}".format(nucleotide, count))
+    show_totals(totals, sys.stdout)
