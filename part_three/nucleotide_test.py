@@ -28,6 +28,15 @@ class CountSequenceTest(unittest.TestCase):
             "Totals should be zero for empty sequence.")
 
 
+    def test_lowercase_sequence_gives_correct_totals(self):
+        sequence = "acgt"   # test all symbols in lowercase
+        totals = nucleotide.count(sequence)
+        self.assertTrue([t for t in totals.values() if t != 1] == [],
+            "Lowercase a,c,g,t should be recognised as valid input.")
+
+
+
+
 if __name__ == "__main__":
     # Run all tests when the module is invoked as a script.
     unittest.main()

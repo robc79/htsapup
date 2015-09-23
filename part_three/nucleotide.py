@@ -13,6 +13,7 @@ def count(sequence):
     totals = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
 
     for nucleotide in sequence:
+        nucleotide = nucleotide.upper()  # normalise the value before using it
         totals[nucleotide] += 1
 
     return totals
